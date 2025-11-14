@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/RohitChoubey2000/user_authentication/issues"
   },
-  "homepage": "https://github.com/RohitChoubey2000/user_authentication#readme"
+  "homepage": "https://github.com/RohitChoubey2000/user_authentication#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }
