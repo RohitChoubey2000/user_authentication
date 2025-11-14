@@ -12,7 +12,7 @@ app.get("/api/users", (request, response) => {
  });
 
 
-app.listen(4000,(error)=>{
+app.listen(4001,(error)=>{
     if(error) console.log("Error" + error);
-    console.log("Server is running on port 4000")
+    console.log("Server is running on port 4001")
 })
