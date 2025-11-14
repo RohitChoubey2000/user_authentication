@@ -2,7 +2,7 @@ const express = require("express");
 const app  = express();
 
 app.get("/api/users", (request, response) => {
-   db.query("SELECT * FROM user", (error, results) => {
+   db.query("SELECT * FROM users", (error, results) => {
      if (error) {
        console.error("Database error:", error);
       return response.status(500).json({ message: "Server internal error" });
