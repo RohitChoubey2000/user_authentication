@@ -1,9 +1,16 @@
 const express = require("express");
 const app  = express();
 
-app.get("/api/user", (request,response)=> {
-    response.status(200).json({name: "Rohit" ,email: "rohitranjan488gmail.com"})
-});
+app.get("/api/users", (request, response) => {
+   db.query("SELECT * FROM user", (error, results) => {
+     if (error) {
+       console.error("Database error:", error);
+      return response.status(500).json({ message: "Server internal error" });
+     }
+    response.status(200).json(results); // return database
+  });
+ });
+
 
 app.listen(4000,(error)=>{
     if(error) console.log("Error" + error);
