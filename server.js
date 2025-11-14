@@ -1,15 +1,13 @@
 const express = require("express");
 const app  = express();
 
-app.get("/api/users", (request, response) => {
-   db.query("SELECT * FROM users", (error, results) => {
-     if (error) {
-       console.error("Database error:", error);
-      return response.status(500).json({ message: "Server internal error" });
-     }
-    response.status(200).json(results); // return database
-  });
- });
+app.use(express.json());
+
+app.get("/api/user",async(request, response)=>{
+    const  result =await db.query("SELECT * FROM users")
+    response.status(200).json(result);
+
+});
 
 
 app.listen(4001,(error)=>{
